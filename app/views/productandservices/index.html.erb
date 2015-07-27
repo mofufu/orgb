@@ -1,33 +1,42 @@
-<h1>Listing productandservices</h1>
-
-<table>
+<%- model_class = Productandservice -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Productandservice %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Description</th>
-      <th>Sourcing and fulfillment</th>
-      <th>Technology used</th>
-      <th>Expansion plans</th>
-      <th>Business plan</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:sourcing_and_fulfillment) %></th>
+      <th><%= model_class.human_attribute_name(:technology_used) %></th>
+      <th><%= model_class.human_attribute_name(:expansion_plans) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @productandservices.each do |productandservice| %>
       <tr>
+        <td><%= productandservice.id %></td>
         <td><%= productandservice.description %></td>
         <td><%= productandservice.sourcing_and_fulfillment %></td>
         <td><%= productandservice.technology_used %></td>
         <td><%= productandservice.expansion_plans %></td>
-        <td><%= productandservice.business_plan %></td>
-        <td><%= link_to 'Show', productandservice %></td>
-        <td><%= link_to 'Edit', edit_productandservice_path(productandservice) %></td>
-        <td><%= link_to 'Destroy', productandservice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l productandservice.created_at, format: :long %></td>
+        <td>
+          <%= link_to productandservice_path(productandservice), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to productandservice_path(productandservice), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Productandservice', new_productandservice_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_productandservice_path,
+            :class => 'btn btn-primary' %>

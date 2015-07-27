@@ -1,29 +1,30 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Productandservice -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Productandservice %></h1>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @productandservice.description %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:description) %></dt>
+      <dd><pre class="prettyprint"><%= @productandservice.description %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:sourcing_and_fulfillment) %></dt>
+      <dd><pre class="prettyprint"><%= @productandservice.sourcing_and_fulfillment %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:technology_used) %></dt>
+      <dd><pre class="prettyprint"><%= @productandservice.technology_used %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:expansion_plans) %></dt>
+      <dd><pre class="prettyprint"><%= @productandservice.expansion_plans %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Sourcing and fulfillment:</strong>
-  <%= @productandservice.sourcing_and_fulfillment %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              productandservices_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_productandservice_path(@productandservice), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              productandservice_path(@productandservice),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Technology used:</strong>
-  <%= @productandservice.technology_used %>
-</p>
-
-<p>
-  <strong>Expansion plans:</strong>
-  <%= @productandservice.expansion_plans %>
-</p>
-
-<p>
-  <strong>Business plan:</strong>
-  <%= @productandservice.business_plan %>
-</p>
-
-<%= link_to 'Edit', edit_productandservice_path(@productandservice) %> |
-<%= link_to 'Back', productandservices_path %>

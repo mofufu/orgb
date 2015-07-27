@@ -1,15 +1,34 @@
-<%= simple_form_for(@productandservice) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :description %>
-    <%= f.input :sourcing_and_fulfillment %>
-    <%= f.input :technology_used %>
-    <%= f.input :expansion_plans %>
-    <%= f.association :business_plan %>
+<%= form_for @productandservice, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :description, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :description, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :sourcing_and_fulfillment, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :sourcing_and_fulfillment, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :technology_used, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :technology_used, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :expansion_plans, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :expansion_plans, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  productandservices_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
