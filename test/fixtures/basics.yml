@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  value_proposition: MyText
+  objective: MyText
+  plan_description: MyText
+  marketing_plan_id: 
+
+two:
+  value_proposition: MyText
+  objective: MyText
+  plan_description: MyText
+  marketing_plan_id: 
