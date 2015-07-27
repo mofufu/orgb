@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  marketing_plan_id: 
+  type_of_activity: MyString
+  start_date: 2015-07-27
+  end_date: 2015-07-27
+  implementation_team: MyString
+  estimated_cost: MyString
+  media_strategy: MyText
+  distribution_channels: MyText
+
+two:
+  marketing_plan_id: 
+  type_of_activity: MyString
+  start_date: 2015-07-27
+  end_date: 2015-07-27
+  implementation_team: MyString
+  estimated_cost: MyString
+  media_strategy: MyText
+  distribution_channels: MyText
