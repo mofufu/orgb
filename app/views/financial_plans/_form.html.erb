@@ -1,0 +1,17 @@
+<%= simple_form_for(@financial_plan) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :important_assumptions %>
+    <%= f.input :key_financial_indicators %>
+    <%= f.input :projected_profit_and_loss %>
+    <%= f.input :projected_cash_flow %>
+    <%= f.input :projected_balance_sheet %>
+    <%= f.input :long_term_financial_plan %>
+    <%= f.association :business_plan %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

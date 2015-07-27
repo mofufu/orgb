@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Important assumptions:</strong>
+  <%= @financial_plan.important_assumptions %>
+</p>
+
+<p>
+  <strong>Key financial indicators:</strong>
+  <%= @financial_plan.key_financial_indicators %>
+</p>
+
+<p>
+  <strong>Projected profit and loss:</strong>
+  <%= @financial_plan.projected_profit_and_loss %>
+</p>
+
+<p>
+  <strong>Projected cash flow:</strong>
+  <%= @financial_plan.projected_cash_flow %>
+</p>
+
+<p>
+  <strong>Projected balance sheet:</strong>
+  <%= @financial_plan.projected_balance_sheet %>
+</p>
+
+<p>
+  <strong>Long term financial plan:</strong>
+  <%= @financial_plan.long_term_financial_plan %>
+</p>
+
+<p>
+  <strong>Business plan:</strong>
+  <%= @financial_plan.business_plan %>
+</p>
+
+<%= link_to 'Edit', edit_financial_plan_path(@financial_plan) %> |
+<%= link_to 'Back', financial_plans_path %>

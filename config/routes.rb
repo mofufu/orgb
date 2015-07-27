@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :financial_plans
+
   resources :productandservices
 
   resources :resources

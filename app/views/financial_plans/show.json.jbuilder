@@ -1,0 +1,1 @@
+json.extract! @financial_plan, :id, :important_assumptions, :key_financial_indicators, :projected_profit_and_loss, :projected_cash_flow, :projected_balance_sheet, :long_term_financial_plan, :business_plan_id, :created_at, :updated_at
