@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Marketing plan:</strong>
+  <%= @metric.marketing_plan %>
+</p>
+
+<p>
+  <strong>Milestone of completion:</strong>
+  <%= @metric.milestone_of_completion %>
+</p>
+
+<p>
+  <strong>Success indicator:</strong>
+  <%= @metric.success_indicator %>
+</p>
+
+<p>
+  <strong>Monitoring method:</strong>
+  <%= @metric.monitoring_method %>
+</p>
+
+<p>
+  <strong>Review outcomes:</strong>
+  <%= @metric.review_outcomes %>
+</p>
+
+<%= link_to 'Edit', edit_metric_path(@metric) %> |
+<%= link_to 'Back', metrics_path %>
