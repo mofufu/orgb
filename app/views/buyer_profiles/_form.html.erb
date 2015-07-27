@@ -1,0 +1,16 @@
+<%= simple_form_for(@buyer_profile) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :buyer_goals %>
+    <%= f.input :target_features %>
+    <%= f.input :potential_hesitations %>
+    <%= f.input :acquisition_location %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

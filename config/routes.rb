@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :buyer_profiles
+
   resources :basics
 
   resources :strategies

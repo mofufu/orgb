@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @buyer_profile.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @buyer_profile.description %>
+</p>
+
+<p>
+  <strong>Buyer goals:</strong>
+  <%= @buyer_profile.buyer_goals %>
+</p>
+
+<p>
+  <strong>Target features:</strong>
+  <%= @buyer_profile.target_features %>
+</p>
+
+<p>
+  <strong>Potential hesitations:</strong>
+  <%= @buyer_profile.potential_hesitations %>
+</p>
+
+<p>
+  <strong>Acquisition location:</strong>
+  <%= @buyer_profile.acquisition_location %>
+</p>
+
+<%= link_to 'Edit', edit_buyer_profile_path(@buyer_profile) %> |
+<%= link_to 'Back', buyer_profiles_path %>

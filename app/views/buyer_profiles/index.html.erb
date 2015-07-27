@@ -1,0 +1,35 @@
+<h1>Listing buyer_profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Buyer goals</th>
+      <th>Target features</th>
+      <th>Potential hesitations</th>
+      <th>Acquisition location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @buyer_profiles.each do |buyer_profile| %>
+      <tr>
+        <td><%= buyer_profile.name %></td>
+        <td><%= buyer_profile.description %></td>
+        <td><%= buyer_profile.buyer_goals %></td>
+        <td><%= buyer_profile.target_features %></td>
+        <td><%= buyer_profile.potential_hesitations %></td>
+        <td><%= buyer_profile.acquisition_location %></td>
+        <td><%= link_to 'Show', buyer_profile %></td>
+        <td><%= link_to 'Edit', edit_buyer_profile_path(buyer_profile) %></td>
+        <td><%= link_to 'Destroy', buyer_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Buyer profile', new_buyer_profile_path %>
