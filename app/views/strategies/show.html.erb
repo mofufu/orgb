@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Marketing plan:</strong>
+  <%= @strategy.marketing_plan %>
+</p>
+
+<p>
+  <strong>Type of activity:</strong>
+  <%= @strategy.type_of_activity %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @strategy.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @strategy.end_date %>
+</p>
+
+<p>
+  <strong>Implementation team:</strong>
+  <%= @strategy.implementation_team %>
+</p>
+
+<p>
+  <strong>Estimated cost:</strong>
+  <%= @strategy.estimated_cost %>
+</p>
+
+<p>
+  <strong>Media strategy:</strong>
+  <%= @strategy.media_strategy %>
+</p>
+
+<p>
+  <strong>Distribution channels:</strong>
+  <%= @strategy.distribution_channels %>
+</p>
+
+<%= link_to 'Edit', edit_strategy_path(@strategy) %> |
+<%= link_to 'Back', strategies_path %>
