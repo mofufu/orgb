@@ -1,5 +1,6 @@
-<h1>New management_summary</h1>
+<%- model_class = ManagementSummary -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => ManagementSummary %></h1>
+</div>
+<%= render :partial => 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', management_summaries_path %>

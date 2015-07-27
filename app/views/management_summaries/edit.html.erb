@@ -1,6 +1,5 @@
-<h1>Editing management_summary</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @management_summary %> |
-<%= link_to 'Back', management_summaries_path %>
+<%- model_class = ManagementSummary -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => ManagementSummary %></h1>
+</div>
+<%= render :partial => 'form' %>

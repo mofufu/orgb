@@ -1,15 +1,34 @@
-<%= simple_form_for(@management_summary) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :organization_structure %>
-    <%= f.input :management_team %>
-    <%= f.input :team_gaps %>
-    <%= f.input :personnel_plan %>
-    <%= f.association :business_plan %>
+<%= form_for @management_summary, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :organization_structure, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :organization_structure, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :management_team, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :management_team, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :team_gaps, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :team_gaps, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :personnel_plan, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :personnel_plan, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  management_summaries_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

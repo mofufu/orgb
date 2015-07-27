@@ -1,29 +1,30 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = ManagementSummary -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => ManagementSummary %></h1>
+</div>
 
-<p>
-  <strong>Organization structure:</strong>
-  <%= @management_summary.organization_structure %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:organization_structure) %></dt>
+      <dd><pre class="prettyprint"><%= @management_summary.organization_structure %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:management_team) %></dt>
+      <dd><pre class="prettyprint"><%= @management_summary.management_team %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:team_gaps) %></dt>
+      <dd><pre class="prettyprint"><%= @management_summary.team_gaps %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:personnel_plan) %></dt>
+      <dd><pre class="prettyprint"><%= @management_summary.personnel_plan %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Management team:</strong>
-  <%= @management_summary.management_team %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              management_summaries_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_management_summary_path(@management_summary), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              management_summary_path(@management_summary),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Team gaps:</strong>
-  <%= @management_summary.team_gaps %>
-</p>
-
-<p>
-  <strong>Personnel plan:</strong>
-  <%= @management_summary.personnel_plan %>
-</p>
-
-<p>
-  <strong>Business plan:</strong>
-  <%= @management_summary.business_plan %>
-</p>
-
-<%= link_to 'Edit', edit_management_summary_path(@management_summary) %> |
-<%= link_to 'Back', management_summaries_path %>
