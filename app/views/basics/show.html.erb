@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Value proposition:</strong>
+  <%= @basic.value_proposition %>
+</p>
+
+<p>
+  <strong>Objective:</strong>
+  <%= @basic.objective %>
+</p>
+
+<p>
+  <strong>Plan description:</strong>
+  <%= @basic.plan_description %>
+</p>
+
+<p>
+  <strong>Marketing plan:</strong>
+  <%= @basic.marketing_plan %>
+</p>
+
+<%= link_to 'Edit', edit_basic_path(@basic) %> |
+<%= link_to 'Back', basics_path %>

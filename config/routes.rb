@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :basics
+
   resources :strategies
 
   resources :metrics
