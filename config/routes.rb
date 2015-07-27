@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :sections
+
   resources :marketing_plans
 
   resources :business_plans
