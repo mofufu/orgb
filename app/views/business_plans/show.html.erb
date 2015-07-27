@@ -1,4 +1,22 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = BusinessPlan -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => BusinessPlan %></h1>
+</div>
 
-<%= link_to 'Edit', edit_business_plan_path(@business_plan) %> |
-<%= link_to 'Back', business_plans_path %>
+<div class="fieldset">
+  <dl>
+  </dl>
+</div>
+
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              business_plans_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_business_plan_path(@business_plan), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              business_plan_path(@business_plan),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
+
