@@ -1,0 +1,33 @@
+<h1>Listing productandservices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Sourcing and fulfillment</th>
+      <th>Technology used</th>
+      <th>Expansion plans</th>
+      <th>Business plan</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @productandservices.each do |productandservice| %>
+      <tr>
+        <td><%= productandservice.description %></td>
+        <td><%= productandservice.sourcing_and_fulfillment %></td>
+        <td><%= productandservice.technology_used %></td>
+        <td><%= productandservice.expansion_plans %></td>
+        <td><%= productandservice.business_plan %></td>
+        <td><%= link_to 'Show', productandservice %></td>
+        <td><%= link_to 'Edit', edit_productandservice_path(productandservice) %></td>
+        <td><%= link_to 'Destroy', productandservice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Productandservice', new_productandservice_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @productandservice.description %>
+</p>
+
+<p>
+  <strong>Sourcing and fulfillment:</strong>
+  <%= @productandservice.sourcing_and_fulfillment %>
+</p>
+
+<p>
+  <strong>Technology used:</strong>
+  <%= @productandservice.technology_used %>
+</p>
+
+<p>
+  <strong>Expansion plans:</strong>
+  <%= @productandservice.expansion_plans %>
+</p>
+
+<p>
+  <strong>Business plan:</strong>
+  <%= @productandservice.business_plan %>
+</p>
+
+<%= link_to 'Edit', edit_productandservice_path(@productandservice) %> |
+<%= link_to 'Back', productandservices_path %>
