@@ -1,6 +1,5 @@
-<h1>Editing buyer_profile</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @buyer_profile %> |
-<%= link_to 'Back', buyer_profiles_path %>
+<%- model_class = BuyerProfile -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => BuyerProfile %></h1>
+</div>
+<%= render :partial => 'form' %>

@@ -1,34 +1,34 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = BuyerProfile -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => BuyerProfile %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @buyer_profile.name %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
+      <dd><pre class="prettyprint"><%= @buyer_profile.name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:description) %></dt>
+      <dd><pre class="prettyprint"><%= @buyer_profile.description %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:buyer_goals) %></dt>
+      <dd><pre class="prettyprint"><%= @buyer_profile.buyer_goals %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:target_features) %></dt>
+      <dd><pre class="prettyprint"><%= @buyer_profile.target_features %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:potential_hesitations) %></dt>
+      <dd><pre class="prettyprint"><%= @buyer_profile.potential_hesitations %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:acquisition_location) %></dt>
+      <dd><pre class="prettyprint"><%= @buyer_profile.acquisition_location %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @buyer_profile.description %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              buyer_profiles_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_buyer_profile_path(@buyer_profile), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              buyer_profile_path(@buyer_profile),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Buyer goals:</strong>
-  <%= @buyer_profile.buyer_goals %>
-</p>
-
-<p>
-  <strong>Target features:</strong>
-  <%= @buyer_profile.target_features %>
-</p>
-
-<p>
-  <strong>Potential hesitations:</strong>
-  <%= @buyer_profile.potential_hesitations %>
-</p>
-
-<p>
-  <strong>Acquisition location:</strong>
-  <%= @buyer_profile.acquisition_location %>
-</p>
-
-<%= link_to 'Edit', edit_buyer_profile_path(@buyer_profile) %> |
-<%= link_to 'Back', buyer_profiles_path %>
