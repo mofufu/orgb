@@ -1,9 +1,22 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = MarketingPlan -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => MarketingPlan %></h1>
+</div>
 
-<p>
-  <strong>Buyer profile:</strong>
-  <%= @marketing_plan.buyer_profile %>
-</p>
+<div class="fieldset">
+  <dl>
+  </dl>
+</div>
 
-<%= link_to 'Edit', edit_marketing_plan_path(@marketing_plan) %> |
-<%= link_to 'Back', marketing_plans_path %>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              marketing_plans_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_marketing_plan_path(@marketing_plan), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              marketing_plan_path(@marketing_plan),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
+

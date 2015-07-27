@@ -1,25 +1,34 @@
-<h1>Listing marketing_plans</h1>
-
-<table>
+<%- model_class = MarketingPlan -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => MarketingPlan %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Buyer profile</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @marketing_plans.each do |marketing_plan| %>
       <tr>
-        <td><%= marketing_plan.buyer_profile %></td>
-        <td><%= link_to 'Show', marketing_plan %></td>
-        <td><%= link_to 'Edit', edit_marketing_plan_path(marketing_plan) %></td>
-        <td><%= link_to 'Destroy', marketing_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= marketing_plan.id %></td>
+        <td><%=l marketing_plan.created_at, format: :long %></td>
+        <td>
+          <%= link_to marketing_plan_path(marketing_plan), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to marketing_plan_path(marketing_plan), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Marketing plan', new_marketing_plan_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_marketing_plan_path,
+            :class => 'btn btn-primary' %>
