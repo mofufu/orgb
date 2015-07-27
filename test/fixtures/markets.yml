@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  targeted_segment_strategy: MyText
+  market_needs: MyText
+  market_trends: MyText
+  market_growth_potential: MyText
+  industry_analysis: MyText
+  industry_participants: MyText
+  distribution_patterns: MyText
+  buying_patterns: MyText
+  business_plan_id: 
+
+two:
+  targeted_segment_strategy: MyText
+  market_needs: MyText
+  market_trends: MyText
+  market_growth_potential: MyText
+  industry_analysis: MyText
+  industry_participants: MyText
+  distribution_patterns: MyText
+  buying_patterns: MyText
+  business_plan_id: 
