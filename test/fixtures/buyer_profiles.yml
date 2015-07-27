@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  buyer_goals: MyText
+  target_features: MyText
+  potential_hesitations: MyText
+  acquisition_location: MyText
+
+two:
+  name: MyString
+  description: MyText
+  buyer_goals: MyText
+  target_features: MyText
+  potential_hesitations: MyText
+  acquisition_location: MyText
