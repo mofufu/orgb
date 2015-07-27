@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  value_proposition: MyText
+  competitive_advantage: MyText
+  positioning_statements: MyText
+  pricing_strategy: MyText
+  general_promotion_strategy: MyText
+  distribution_patterns: MyText
+  sales_strategy: MyText
+  sales_programs: MyText
+  strategic_partnerships: MyText
+  milestones: MyText
+  business_plan_id: 
+
+two:
+  value_proposition: MyText
+  competitive_advantage: MyText
+  positioning_statements: MyText
+  pricing_strategy: MyText
+  general_promotion_strategy: MyText
+  distribution_patterns: MyText
+  sales_strategy: MyText
+  sales_programs: MyText
+  strategic_partnerships: MyText
+  milestones: MyText
+  business_plan_id: 
