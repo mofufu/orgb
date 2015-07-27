@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  organization_structure: MyText
+  management_team: MyText
+  team_gaps: MyText
+  personnel_plan: MyText
+  business_plan_id: 
+
+two:
+  organization_structure: MyText
+  management_team: MyText
+  team_gaps: MyText
+  personnel_plan: MyText
+  business_plan_id: 
