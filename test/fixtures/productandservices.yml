@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  sourcing_and_fulfillment: MyText
+  technology_used: MyText
+  expansion_plans: MyText
+  business_plan_id: 
+
+two:
+  description: MyText
+  sourcing_and_fulfillment: MyText
+  technology_used: MyText
+  expansion_plans: MyText
+  business_plan_id: 
