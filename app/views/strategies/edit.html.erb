@@ -1,6 +1,5 @@
-<h1>Editing strategy</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @strategy %> |
-<%= link_to 'Back', strategies_path %>
+<%- model_class = Strategy -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Strategy %></h1>
+</div>
+<%= render :partial => 'form' %>

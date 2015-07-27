@@ -1,18 +1,52 @@
-<%= simple_form_for(@strategy) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :marketing_plan %>
-    <%= f.input :type_of_activity %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.input :implementation_team %>
-    <%= f.input :estimated_cost %>
-    <%= f.input :media_strategy %>
-    <%= f.input :distribution_channels %>
+<%= form_for @strategy, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :type_of_activity, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :type_of_activity, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :start_date, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.date_select :start_date, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :end_date, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.date_select :end_date, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :implementation_team, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :implementation_team, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :estimated_cost, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :estimated_cost, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :media_strategy, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :media_strategy, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :distribution_channels, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :distribution_channels, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  strategies_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

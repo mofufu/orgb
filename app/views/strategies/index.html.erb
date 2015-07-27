@@ -1,24 +1,26 @@
-<h1>Listing strategies</h1>
-
-<table>
+<%- model_class = Strategy -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Strategy %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Marketing plan</th>
-      <th>Type of activity</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>Implementation team</th>
-      <th>Estimated cost</th>
-      <th>Media strategy</th>
-      <th>Distribution channels</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:type_of_activity) %></th>
+      <th><%= model_class.human_attribute_name(:start_date) %></th>
+      <th><%= model_class.human_attribute_name(:end_date) %></th>
+      <th><%= model_class.human_attribute_name(:implementation_team) %></th>
+      <th><%= model_class.human_attribute_name(:estimated_cost) %></th>
+      <th><%= model_class.human_attribute_name(:media_strategy) %></th>
+      <th><%= model_class.human_attribute_name(:distribution_channels) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @strategies.each do |strategy| %>
       <tr>
-        <td><%= strategy.marketing_plan %></td>
+        <td><%= strategy.id %></td>
         <td><%= strategy.type_of_activity %></td>
         <td><%= strategy.start_date %></td>
         <td><%= strategy.end_date %></td>
@@ -26,14 +28,21 @@
         <td><%= strategy.estimated_cost %></td>
         <td><%= strategy.media_strategy %></td>
         <td><%= strategy.distribution_channels %></td>
-        <td><%= link_to 'Show', strategy %></td>
-        <td><%= link_to 'Edit', edit_strategy_path(strategy) %></td>
-        <td><%= link_to 'Destroy', strategy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l strategy.created_at, format: :long %></td>
+        <td>
+          <%= link_to strategy_path(strategy), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to strategy_path(strategy), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Strategy', new_strategy_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_strategy_path,
+            :class => 'btn btn-primary' %>
