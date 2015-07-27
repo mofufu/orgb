@@ -1,0 +1,21 @@
+<%= simple_form_for(@strategyand_implementation) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :value_proposition %>
+    <%= f.input :competitive_advantage %>
+    <%= f.input :positioning_statements %>
+    <%= f.input :pricing_strategy %>
+    <%= f.input :general_promotion_strategy %>
+    <%= f.input :distribution_patterns %>
+    <%= f.input :sales_strategy %>
+    <%= f.input :sales_programs %>
+    <%= f.input :strategic_partnerships %>
+    <%= f.input :milestones %>
+    <%= f.association :business_plan %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

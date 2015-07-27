@@ -1,0 +1,45 @@
+<h1>Listing strategyand_implementations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value proposition</th>
+      <th>Competitive advantage</th>
+      <th>Positioning statements</th>
+      <th>Pricing strategy</th>
+      <th>General promotion strategy</th>
+      <th>Distribution patterns</th>
+      <th>Sales strategy</th>
+      <th>Sales programs</th>
+      <th>Strategic partnerships</th>
+      <th>Milestones</th>
+      <th>Business plan</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @strategyand_implementations.each do |strategyand_implementation| %>
+      <tr>
+        <td><%= strategyand_implementation.value_proposition %></td>
+        <td><%= strategyand_implementation.competitive_advantage %></td>
+        <td><%= strategyand_implementation.positioning_statements %></td>
+        <td><%= strategyand_implementation.pricing_strategy %></td>
+        <td><%= strategyand_implementation.general_promotion_strategy %></td>
+        <td><%= strategyand_implementation.distribution_patterns %></td>
+        <td><%= strategyand_implementation.sales_strategy %></td>
+        <td><%= strategyand_implementation.sales_programs %></td>
+        <td><%= strategyand_implementation.strategic_partnerships %></td>
+        <td><%= strategyand_implementation.milestones %></td>
+        <td><%= strategyand_implementation.business_plan %></td>
+        <td><%= link_to 'Show', strategyand_implementation %></td>
+        <td><%= link_to 'Edit', edit_strategyand_implementation_path(strategyand_implementation) %></td>
+        <td><%= link_to 'Destroy', strategyand_implementation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Strategyand implementation', new_strategyand_implementation_path %>
