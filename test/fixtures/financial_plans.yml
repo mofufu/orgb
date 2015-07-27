@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  important_assumptions: MyText
+  key_financial_indicators: MyText
+  projected_profit_and_loss: MyText
+  projected_cash_flow: MyText
+  projected_balance_sheet: MyText
+  long_term_financial_plan: MyText
+  business_plan_id: 
+
+two:
+  important_assumptions: MyText
+  key_financial_indicators: MyText
+  projected_profit_and_loss: MyText
+  projected_cash_flow: MyText
+  projected_balance_sheet: MyText
+  long_term_financial_plan: MyText
+  business_plan_id: 
