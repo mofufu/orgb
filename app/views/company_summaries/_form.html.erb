@@ -1,0 +1,14 @@
+<%= simple_form_for(@company_summary) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :ownership %>
+    <%= f.input :start_plan %>
+    <%= f.input :locations %>
+    <%= f.association :business_plan %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

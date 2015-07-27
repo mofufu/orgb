@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ownership:</strong>
+  <%= @company_summary.ownership %>
+</p>
+
+<p>
+  <strong>Start plan:</strong>
+  <%= @company_summary.start_plan %>
+</p>
+
+<p>
+  <strong>Locations:</strong>
+  <%= @company_summary.locations %>
+</p>
+
+<p>
+  <strong>Business plan:</strong>
+  <%= @company_summary.business_plan %>
+</p>
+
+<%= link_to 'Edit', edit_company_summary_path(@company_summary) %> |
+<%= link_to 'Back', company_summaries_path %>
