@@ -1,6 +1,5 @@
-<h1>Editing financial_plan</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @financial_plan %> |
-<%= link_to 'Back', financial_plans_path %>
+<%- model_class = FinancialPlan -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => FinancialPlan %></h1>
+</div>
+<%= render :partial => 'form' %>

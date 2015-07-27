@@ -1,17 +1,46 @@
-<%= simple_form_for(@financial_plan) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :important_assumptions %>
-    <%= f.input :key_financial_indicators %>
-    <%= f.input :projected_profit_and_loss %>
-    <%= f.input :projected_cash_flow %>
-    <%= f.input :projected_balance_sheet %>
-    <%= f.input :long_term_financial_plan %>
-    <%= f.association :business_plan %>
+<%= form_for @financial_plan, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :important_assumptions, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :important_assumptions, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :key_financial_indicators, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :key_financial_indicators, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :projected_profit_and_loss, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :projected_profit_and_loss, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :projected_cash_flow, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :projected_cash_flow, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :projected_balance_sheet, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :projected_balance_sheet, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :long_term_financial_plan, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :long_term_financial_plan, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  financial_plans_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

@@ -1,5 +1,6 @@
-<h1>New financial_plan</h1>
+<%- model_class = FinancialPlan -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => FinancialPlan %></h1>
+</div>
+<%= render :partial => 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', financial_plans_path %>

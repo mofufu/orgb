@@ -1,39 +1,34 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = FinancialPlan -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => FinancialPlan %></h1>
+</div>
 
-<p>
-  <strong>Important assumptions:</strong>
-  <%= @financial_plan.important_assumptions %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:important_assumptions) %></dt>
+      <dd><pre class="prettyprint"><%= @financial_plan.important_assumptions %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:key_financial_indicators) %></dt>
+      <dd><pre class="prettyprint"><%= @financial_plan.key_financial_indicators %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:projected_profit_and_loss) %></dt>
+      <dd><pre class="prettyprint"><%= @financial_plan.projected_profit_and_loss %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:projected_cash_flow) %></dt>
+      <dd><pre class="prettyprint"><%= @financial_plan.projected_cash_flow %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:projected_balance_sheet) %></dt>
+      <dd><pre class="prettyprint"><%= @financial_plan.projected_balance_sheet %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:long_term_financial_plan) %></dt>
+      <dd><pre class="prettyprint"><%= @financial_plan.long_term_financial_plan %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Key financial indicators:</strong>
-  <%= @financial_plan.key_financial_indicators %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              financial_plans_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_financial_plan_path(@financial_plan), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              financial_plan_path(@financial_plan),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Projected profit and loss:</strong>
-  <%= @financial_plan.projected_profit_and_loss %>
-</p>
-
-<p>
-  <strong>Projected cash flow:</strong>
-  <%= @financial_plan.projected_cash_flow %>
-</p>
-
-<p>
-  <strong>Projected balance sheet:</strong>
-  <%= @financial_plan.projected_balance_sheet %>
-</p>
-
-<p>
-  <strong>Long term financial plan:</strong>
-  <%= @financial_plan.long_term_financial_plan %>
-</p>
-
-<p>
-  <strong>Business plan:</strong>
-  <%= @financial_plan.business_plan %>
-</p>
-
-<%= link_to 'Edit', edit_financial_plan_path(@financial_plan) %> |
-<%= link_to 'Back', financial_plans_path %>

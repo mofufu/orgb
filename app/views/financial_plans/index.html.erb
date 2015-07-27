@@ -1,37 +1,46 @@
-<h1>Listing financial_plans</h1>
-
-<table>
+<%- model_class = FinancialPlan -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => FinancialPlan %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Important assumptions</th>
-      <th>Key financial indicators</th>
-      <th>Projected profit and loss</th>
-      <th>Projected cash flow</th>
-      <th>Projected balance sheet</th>
-      <th>Long term financial plan</th>
-      <th>Business plan</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:important_assumptions) %></th>
+      <th><%= model_class.human_attribute_name(:key_financial_indicators) %></th>
+      <th><%= model_class.human_attribute_name(:projected_profit_and_loss) %></th>
+      <th><%= model_class.human_attribute_name(:projected_cash_flow) %></th>
+      <th><%= model_class.human_attribute_name(:projected_balance_sheet) %></th>
+      <th><%= model_class.human_attribute_name(:long_term_financial_plan) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @financial_plans.each do |financial_plan| %>
       <tr>
+        <td><%= financial_plan.id %></td>
         <td><%= financial_plan.important_assumptions %></td>
         <td><%= financial_plan.key_financial_indicators %></td>
         <td><%= financial_plan.projected_profit_and_loss %></td>
         <td><%= financial_plan.projected_cash_flow %></td>
         <td><%= financial_plan.projected_balance_sheet %></td>
         <td><%= financial_plan.long_term_financial_plan %></td>
-        <td><%= financial_plan.business_plan %></td>
-        <td><%= link_to 'Show', financial_plan %></td>
-        <td><%= link_to 'Edit', edit_financial_plan_path(financial_plan) %></td>
-        <td><%= link_to 'Destroy', financial_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l financial_plan.created_at, format: :long %></td>
+        <td>
+          <%= link_to financial_plan_path(financial_plan), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to financial_plan_path(financial_plan), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Financial plan', new_financial_plan_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_financial_plan_path,
+            :class => 'btn btn-primary' %>
