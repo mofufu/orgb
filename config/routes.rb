@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :management_summaries
+
   resources :financial_plans
 
   resources :productandservices

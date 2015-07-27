@@ -1,0 +1,15 @@
+<%= simple_form_for(@management_summary) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :organization_structure %>
+    <%= f.input :management_team %>
+    <%= f.input :team_gaps %>
+    <%= f.input :personnel_plan %>
+    <%= f.association :business_plan %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

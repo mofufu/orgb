@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Organization structure:</strong>
+  <%= @management_summary.organization_structure %>
+</p>
+
+<p>
+  <strong>Management team:</strong>
+  <%= @management_summary.management_team %>
+</p>
+
+<p>
+  <strong>Team gaps:</strong>
+  <%= @management_summary.team_gaps %>
+</p>
+
+<p>
+  <strong>Personnel plan:</strong>
+  <%= @management_summary.personnel_plan %>
+</p>
+
+<p>
+  <strong>Business plan:</strong>
+  <%= @management_summary.business_plan %>
+</p>
+
+<%= link_to 'Edit', edit_management_summary_path(@management_summary) %> |
+<%= link_to 'Back', management_summaries_path %>
