@@ -1,15 +1,34 @@
-<%= simple_form_for(@metric) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :marketing_plan %>
-    <%= f.input :milestone_of_completion %>
-    <%= f.input :success_indicator %>
-    <%= f.input :monitoring_method %>
-    <%= f.input :review_outcomes %>
+<%= form_for @metric, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :milestone_of_completion, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :milestone_of_completion, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :success_indicator, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :success_indicator, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :monitoring_method, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :monitoring_method, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :review_outcomes, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :review_outcomes, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  metrics_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
