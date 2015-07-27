@@ -1,21 +1,70 @@
-<%= simple_form_for(@strategyand_implementation) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :value_proposition %>
-    <%= f.input :competitive_advantage %>
-    <%= f.input :positioning_statements %>
-    <%= f.input :pricing_strategy %>
-    <%= f.input :general_promotion_strategy %>
-    <%= f.input :distribution_patterns %>
-    <%= f.input :sales_strategy %>
-    <%= f.input :sales_programs %>
-    <%= f.input :strategic_partnerships %>
-    <%= f.input :milestones %>
-    <%= f.association :business_plan %>
+<%= form_for @strategyand_implementation, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :value_proposition, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :value_proposition, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :competitive_advantage, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :competitive_advantage, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :positioning_statements, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :positioning_statements, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :pricing_strategy, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :pricing_strategy, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :general_promotion_strategy, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :general_promotion_strategy, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :distribution_patterns, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :distribution_patterns, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :sales_strategy, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :sales_strategy, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :sales_programs, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :sales_programs, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :strategic_partnerships, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :strategic_partnerships, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :milestones, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :milestones, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  strategyand_implementations_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

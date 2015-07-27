@@ -1,26 +1,29 @@
-<h1>Listing strategyand_implementations</h1>
-
-<table>
+<%- model_class = StrategyandImplementation -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => StrategyandImplementation %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Value proposition</th>
-      <th>Competitive advantage</th>
-      <th>Positioning statements</th>
-      <th>Pricing strategy</th>
-      <th>General promotion strategy</th>
-      <th>Distribution patterns</th>
-      <th>Sales strategy</th>
-      <th>Sales programs</th>
-      <th>Strategic partnerships</th>
-      <th>Milestones</th>
-      <th>Business plan</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:value_proposition) %></th>
+      <th><%= model_class.human_attribute_name(:competitive_advantage) %></th>
+      <th><%= model_class.human_attribute_name(:positioning_statements) %></th>
+      <th><%= model_class.human_attribute_name(:pricing_strategy) %></th>
+      <th><%= model_class.human_attribute_name(:general_promotion_strategy) %></th>
+      <th><%= model_class.human_attribute_name(:distribution_patterns) %></th>
+      <th><%= model_class.human_attribute_name(:sales_strategy) %></th>
+      <th><%= model_class.human_attribute_name(:sales_programs) %></th>
+      <th><%= model_class.human_attribute_name(:strategic_partnerships) %></th>
+      <th><%= model_class.human_attribute_name(:milestones) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @strategyand_implementations.each do |strategyand_implementation| %>
       <tr>
+        <td><%= strategyand_implementation.id %></td>
         <td><%= strategyand_implementation.value_proposition %></td>
         <td><%= strategyand_implementation.competitive_advantage %></td>
         <td><%= strategyand_implementation.positioning_statements %></td>
@@ -31,15 +34,21 @@
         <td><%= strategyand_implementation.sales_programs %></td>
         <td><%= strategyand_implementation.strategic_partnerships %></td>
         <td><%= strategyand_implementation.milestones %></td>
-        <td><%= strategyand_implementation.business_plan %></td>
-        <td><%= link_to 'Show', strategyand_implementation %></td>
-        <td><%= link_to 'Edit', edit_strategyand_implementation_path(strategyand_implementation) %></td>
-        <td><%= link_to 'Destroy', strategyand_implementation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l strategyand_implementation.created_at, format: :long %></td>
+        <td>
+          <%= link_to strategyand_implementation_path(strategyand_implementation), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to strategyand_implementation_path(strategyand_implementation), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Strategyand implementation', new_strategyand_implementation_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_strategyand_implementation_path,
+            :class => 'btn btn-primary' %>

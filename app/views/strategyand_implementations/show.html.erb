@@ -1,59 +1,42 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = StrategyandImplementation -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => StrategyandImplementation %></h1>
+</div>
 
-<p>
-  <strong>Value proposition:</strong>
-  <%= @strategyand_implementation.value_proposition %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:value_proposition) %></dt>
+      <dd><pre class="prettyprint"><%= @strategyand_implementation.value_proposition %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:competitive_advantage) %></dt>
+      <dd><pre class="prettyprint"><%= @strategyand_implementation.competitive_advantage %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:positioning_statements) %></dt>
+      <dd><pre class="prettyprint"><%= @strategyand_implementation.positioning_statements %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:pricing_strategy) %></dt>
+      <dd><pre class="prettyprint"><%= @strategyand_implementation.pricing_strategy %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:general_promotion_strategy) %></dt>
+      <dd><pre class="prettyprint"><%= @strategyand_implementation.general_promotion_strategy %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:distribution_patterns) %></dt>
+      <dd><pre class="prettyprint"><%= @strategyand_implementation.distribution_patterns %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:sales_strategy) %></dt>
+      <dd><pre class="prettyprint"><%= @strategyand_implementation.sales_strategy %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:sales_programs) %></dt>
+      <dd><pre class="prettyprint"><%= @strategyand_implementation.sales_programs %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:strategic_partnerships) %></dt>
+      <dd><pre class="prettyprint"><%= @strategyand_implementation.strategic_partnerships %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:milestones) %></dt>
+      <dd><pre class="prettyprint"><%= @strategyand_implementation.milestones %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Competitive advantage:</strong>
-  <%= @strategyand_implementation.competitive_advantage %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              strategyand_implementations_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_strategyand_implementation_path(@strategyand_implementation), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              strategyand_implementation_path(@strategyand_implementation),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Positioning statements:</strong>
-  <%= @strategyand_implementation.positioning_statements %>
-</p>
-
-<p>
-  <strong>Pricing strategy:</strong>
-  <%= @strategyand_implementation.pricing_strategy %>
-</p>
-
-<p>
-  <strong>General promotion strategy:</strong>
-  <%= @strategyand_implementation.general_promotion_strategy %>
-</p>
-
-<p>
-  <strong>Distribution patterns:</strong>
-  <%= @strategyand_implementation.distribution_patterns %>
-</p>
-
-<p>
-  <strong>Sales strategy:</strong>
-  <%= @strategyand_implementation.sales_strategy %>
-</p>
-
-<p>
-  <strong>Sales programs:</strong>
-  <%= @strategyand_implementation.sales_programs %>
-</p>
-
-<p>
-  <strong>Strategic partnerships:</strong>
-  <%= @strategyand_implementation.strategic_partnerships %>
-</p>
-
-<p>
-  <strong>Milestones:</strong>
-  <%= @strategyand_implementation.milestones %>
-</p>
-
-<p>
-  <strong>Business plan:</strong>
-  <%= @strategyand_implementation.business_plan %>
-</p>
-
-<%= link_to 'Edit', edit_strategyand_implementation_path(@strategyand_implementation) %> |
-<%= link_to 'Back', strategyand_implementations_path %>

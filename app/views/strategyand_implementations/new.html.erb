@@ -1,5 +1,6 @@
-<h1>New strategyand_implementation</h1>
+<%- model_class = StrategyandImplementation -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => StrategyandImplementation %></h1>
+</div>
+<%= render :partial => 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', strategyand_implementations_path %>
